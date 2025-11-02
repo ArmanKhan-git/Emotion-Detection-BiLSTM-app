@@ -7,7 +7,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 
-
+# attention mechanism
 class Attention(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         super(Attention, self).__init__(**kwargs)
@@ -30,7 +30,6 @@ class Attention(tf.keras.layers.Layer):
         context_vector = tf.reduce_sum(inputs * attention_weights, axis=1)
         return context_vector
 
-# Load model, tokenizer, and label encoder
 
 # Load model, tokenizer, and label encoder
 try:
@@ -70,7 +69,7 @@ if st.button("🔍 Predict"):
 
         # Predict probabilities
         y_pred = model.predict(X_input_pad)
-        predicted_index = np.argmax(y_pred, axis=1)
+        predicted_index = np.argmax(y_pred, axis=1) #argmax=shows highest porb.
         predicted_emotion = le.inverse_transform(predicted_index)[0]
 
         
@@ -78,10 +77,10 @@ if st.button("🔍 Predict"):
         st.subheader("📌 Prediction")
         st.success(f"Predicted Emotion: **{predicted_emotion}**")
 
-        # # Probabilities DataFrame
-        # prob_dict = {le.inverse_transform([i])[0]: float(prob) for i, prob in enumerate(y_pred[0])}
-        # prob_df = pd.DataFrame(prob_dict.items(), columns=["Emotion", "Probability"])
-        # prob_df = prob_df.sort_values(by="Probability", ascending=False)
+        #  All Probabilities graph
+        prob_dict = {le.inverse_transform([i])[0]: float(prob) for i, prob in enumerate(y_pred[0])}
+        prob_df = pd.DataFrame(prob_dict.items(), columns=["Emotion", "Probability"])
+        prob_df = prob_df.sort_values(by="Probability", ascending=False)
 
-        # st.subheader("🔮 Prediction Probabilities")
-        # st.bar_chart(prob_df.set_index("Emotion"))
+        st.subheader("🔮 Prediction Probabilities")
+        st.bar_chart(prob_df.set_index("Emotion"))
