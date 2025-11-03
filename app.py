@@ -33,7 +33,7 @@ class Attention(tf.keras.layers.Layer):
 
 # Load model, tokenizer, and label encoder
 try:
-    model = load_model("emotion_lstm_model.h5", custom_objects={"Attention": Attention}, compile=False)
+    model = load_model("emotion_bilstm_model.h5", custom_objects={"Attention": Attention}, compile=False)
 except IndexError:
     # Fix for TensorFlow deserialization issue
     tf.keras.utils.get_custom_objects().clear()
