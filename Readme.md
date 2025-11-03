@@ -2,7 +2,7 @@
 
 A deep learning-based text emotion detection system using BiLSTM with Attention mechanism. Predicts emotions from text input with confidence scores.
 
-## 🚀 [Live Demo](your-streamlit-app-link)
+## 🚀 [Live Demo](https://textfeel.streamlit.app/)
 
 ---
 
