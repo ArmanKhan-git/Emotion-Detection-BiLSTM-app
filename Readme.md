@@ -1,15 +1,97 @@
-🎭 Text Emotion ClassifierThis is a Streamlit web application that uses a deep learning model to predict the emotion from a piece of text.🚀 Live DemoClick here to try the app!The app uses a Bidirectional LSTM (Bi-LSTM) model with a custom Attention mechanism. This allows the model to not only understand the context of a sentence but also to "pay attention" to the specific words that are most important for determining the emotional tone (e.g., "betray" in "I can't believe you would betray me").✨ FeaturesReal-time Emotion Prediction: Enter any text and get an instant classification.Advanced NLP Model: Built with a Bi-LSTM and a custom Attention layer for high-accuracy contextual understanding.Full Probability Breakdown: A clean bar chart shows the model's confidence score for all possible emotions.Interactive UI: A simple and clean user interface built with Streamlit.🛠 Tech StackFrontend: StreamlitDeep Learning: TensorFlow & KerasModel Architecture: Bidirectional LSTM + Custom Attention LayerData Processing: Pandas, NumPyPreprocessing: Scikit-learn (for LabelEncoder), Tokenizer🚀 How to Run Locally1. PrerequisitesYou must have the following pre-trained files in the same directory as app.py. These files are generated during the model training process.emotion_lstm_model.h5: The saved and trained Keras model.tokenizer.pkl: The saved Keras Tokenizer object.label_encoder.pkl: The saved Scikit-learn LabelEncoder object.2. Clone the Repositorygit clone <your-repo-url>
-cd <your-repo-name>
+# 🎭 Text Emotion Classifier
 
-3. Create a Virtual Environment# For Windows
-python -m venv venv
-.\venv\Scripts\activate
+A deep learning-based text emotion detection system using BiLSTM with Attention mechanism. Predicts emotions from text input with confidence scores.
 
-# For macOS/Linux
-python3 -m venv venv
-source venv/bin/activate
+## 🚀 [Live Demo](your-streamlit-app-link)
 
-4. Install DependenciesInstall all the required libraries from the requirements.txt file.pip install -r requirements.txt
+---
 
-5. Run the Appstreamlit run app.py
+## Features
 
+- **Deep Learning Model**: BiLSTM with custom Attention layer for accurate predictions
+- **Multi-Emotion Detection**: Classifies text into multiple emotion categories
+- **Confidence Scores**: Shows probability distribution for all emotions
+- **Interactive UI**: Real-time predictions with visual probability chart
+- **Easy to Use**: Simply enter text and get instant results
+
+---
+
+## Tech Stack
+
+- **Python** - Core programming language
+- **TensorFlow/Keras** - Deep learning framework
+- **Streamlit** - Web interface
+- **BiLSTM + Attention** - Neural network architecture
+- **scikit-learn** - Label encoding and preprocessing
+
+---
+
+## Model Architecture
+
+- **Embedding Layer**: Converts text to dense vectors
+- **Bidirectional LSTM**: Captures context from both directions
+- **Attention Mechanism**: Focuses on important words
+- **Dense Layer**: Final emotion classification
+
+---
+
+## Installation
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/ArmanKhan-git/Emotion-Detection-BiLSTM-app
+cd Emotion-Detection-BiLSTM-app
+```
+
+### 2. Install requirements
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Run the app
+```bash
+streamlit run app.py
+```
+
+---
+
+
+## Usage Example
+
+1. Enter any text: *"I'm so happy today!"*
+2. Click **Predict**
+3. View the predicted emotion with confidence scores
+4. See probability distribution for all emotions
+
+---
+
+## Emotions Detected
+
+The model can classify text into emotions such as:
+- Joy
+- Sadness
+- Anger
+- Fear
+- Surprise
+- Love
+- *and more...*
+
+---
+
+
+## Future Improvements
+
+- Multi-language support
+- Voice input option
+- Emotion history tracking
+- Export results feature
+- API endpoint for integration
+
+---
+
+## Author
+
+**Your Name**
+- GitHub: [@ArmanKhan-git](https://github.com/ArmanKhan-git)
+
+---
